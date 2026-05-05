@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveEasy - Rent Professional Drivers</title>
+
+    <!-- ✅ Correct CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>DriveEasy</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#drivers">Drivers</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Rent Professional Drivers for Your Car</h1>
+            <p>Find experienced, verified drivers instantly.</p>
+
+            <div class="search-box">
+                <input type="text" id="locationSearch" placeholder="Enter your location">
+                <select id="vehicleType">
+                    <option>Sedan</option>
+                    <option>SUV</option>
+                </select>
+                <button onclick="searchDrivers()">Find Drivers</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drivers -->
+    <section id="drivers" class="drivers-section">
+        <div class="container">
+            <h2>Available Drivers</h2>
+            <div id="driversGrid" class="drivers-grid"></div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Book Driver</h2>
+
+            <form id="bookingForm">
+                <input type="hidden" id="selectedDriverId">
+
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="customerName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Pickup Location</label>
+                    <input type="text" id="pickupLocation" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Destination</label>
+                    <input type="text" id="destination" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Date & Time</label>
+                    <input type="datetime-local" id="bookingDateTime" required>
+                </div>
+                <div id="successPopup" class="success-popup">
+    <p>✅ Booking Confirmed!</p>
+</div>
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 DriveEasy</p>
+    </footer>
+
+    <!-- ✅ Correct JS -->
+    <script src="script.js"></script>
+
+</body>
+</html>
